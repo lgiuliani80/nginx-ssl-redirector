@@ -6,7 +6,7 @@ param(
 $pwd_slashes = $pwd -replace '\\', '/'
 $token_result = az account get-access-token --resource https://vault.azure.net | ConvertFrom-Json
 $token = $token_result.accessToken
-docker run --rm `
+docker run -d --rm `
   --mount "type=bind,source=$pwd_slashes/scripts,target=/docker-entrypoint.d/init-scripts" `
   --mount "type=bind,source=$pwd_slashes/templates,target=/etc/nginx/templates" `
   -e TOKEN=$token `

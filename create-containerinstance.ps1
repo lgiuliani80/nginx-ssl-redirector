@@ -205,6 +205,17 @@ try {
         --name $UmiName `
         --resource-group $ResourceGroup `
         --query "id" -o tsv
+
+    # Create Log Analytics Workspace
+    az monitor log-analytics workspace create `
+        --resource-group $ResourceGroup `
+        --workspace-name $LogAnalyticsWorkspaceName `
+        --location $Location
+
+    if ($LASTEXITCODE -ne 0) {
+        throw "Failed to create log analytics workspace"
+    }
+    Write-Host "Log analytics workspace created successfully" -ForegroundColor Green
     
     # Get Log Analytics Workspace ID and Key
     Write-Host "Getting Log Analytics workspace information..." -ForegroundColor Yellow
@@ -241,6 +252,10 @@ properties:
     - name: nginx-container
       properties:
         image: nginx:latest
+        command:
+          - "/bin/bash"
+          - "-c"
+          - "ulimit -n 65535 && /docker-entrypoint.sh nginx -g 'daemon off;'"
         resources:
           requests:
             cpu: 1.0

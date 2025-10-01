@@ -1,0 +1,9 @@
+locust
+paho-mqtt
+azure-core
+azure-identity
+azure-keyvault-secrets
+azure-iot-hub
+azure-data-tables
+azure-eventhub
+azure-storage-queue

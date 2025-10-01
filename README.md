@@ -41,3 +41,9 @@ This project creates an Azure Container Instance running nginx that acts as an S
 ### Azure Container Apps
 
 [Azure Container Apps deployment guide](ACA.md).
+
+
+## Load Testing by Locust
+
+Performed load testing by simulating multiple IoT devices connecting to a proxy, evaluating system performance and scalability.  
+See documentation here [Locust Load Testing](/locust-iothub/README.md).
