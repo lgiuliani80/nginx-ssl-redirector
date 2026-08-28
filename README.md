@@ -44,7 +44,7 @@ This project creates an Azure Container Instance running nginx that acts as an S
 
 ### Azure Service Fabric Cluster
 
-[Azure Service Fabric Cluster deployment guide](/IotHubProxy-Build/README.md).
+[Azure Service Fabric Cluster deployment guide](/servicefabric/README.md).
 
 ## Load Testing by Locust
 
