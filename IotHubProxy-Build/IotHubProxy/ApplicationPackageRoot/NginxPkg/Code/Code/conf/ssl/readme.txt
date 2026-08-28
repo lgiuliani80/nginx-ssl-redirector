@@ -1,0 +1,1 @@
+﻿Place nginx-cert.crt and nginx-cert.key here.

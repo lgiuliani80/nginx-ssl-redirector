@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.7.9\build\Microsoft.VisualStudio.Azure.Fabric.Application.props" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.7.9\build\Microsoft.VisualStudio.Azure.Fabric.Application.props')" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>2f7a195f-cf00-4049-b7c3-130ab809edd2</ProjectGuid>
+    <ProjectVersion>2.7</ProjectVersion>
+    <MinToolsVersion>16.10</MinToolsVersion>
+    <SupportedMSBuildNuGetPackageVersion>1.7.9</SupportedMSBuildNuGetPackageVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ApplicationPackageRoot\ApplicationManifest.xml" />
+    <None Include="ApplicationParameters\Cloud.xml" />
+    <None Include="ApplicationParameters\Local.1Node.xml" />
+    <None Include="ApplicationParameters\Local.5Node.xml" />
+    <None Include="PublishProfiles\Cloud.xml" />
+    <None Include="PublishProfiles\Local.1Node.xml" />
+    <None Include="PublishProfiles\Local.5Node.xml" />
+    <None Include="Scripts\Deploy-FabricApplication.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\conf\fastcgi.conf" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\conf\fastcgi_params" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\conf\koi-utf" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\conf\koi-win" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\conf\mime.types" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\conf\nginx.conf" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\conf\scgi_params" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\conf\ssl\readme.txt" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\conf\uwsgi_params" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\conf\win-utf" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\contrib\geo2nginx.pl" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\contrib\README" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\contrib\unicode2nginx\koi-utf" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\contrib\unicode2nginx\unicode-to-nginx.pl" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\contrib\unicode2nginx\win-utf" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\contrib\vim\ftdetect\nginx.vim" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\contrib\vim\ftplugin\nginx.vim" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\contrib\vim\indent\nginx.vim" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\contrib\vim\syntax\nginx.vim" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\docs\CHANGES" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\docs\CHANGES.ru" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\docs\CODE_OF_CONDUCT.md" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\docs\CONTRIBUTING.md" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\docs\LICENSE" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\docs\OpenSSL.LICENSE" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\docs\PCRE.LICENCE" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\docs\README.md" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\docs\SECURITY.md" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\docs\zlib.LICENSE" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\html\50x.html" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\html\index.html" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\logs\placeholder.txt" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\nginx.exe" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\temp\client_body_temp\placeholder.txt" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\temp\fastcgi_temp\placeholder.txt" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\temp\placeholder.txt" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\temp\proxy_temp\placeholder.txt" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\temp\scgi_temp\placeholder.txt" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Code\temp\uwsgi_temp\placeholder.txt" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\Config\Settings.xml" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Code\ServiceManifest.xml" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\Config\Settings.xml" />
+    <Content Include="ApplicationPackageRoot\NginxPkg\ServiceManifest.xml" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <PropertyGroup>
+    <ApplicationProjectTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Service Fabric Tools\Microsoft.VisualStudio.Azure.Fabric.ApplicationProject.targets</ApplicationProjectTargetsPath>
+  </PropertyGroup>
+  <Import Project="$(ApplicationProjectTargetsPath)" Condition="Exists('$(ApplicationProjectTargetsPath)')" />
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.7.9\build\Microsoft.VisualStudio.Azure.Fabric.Application.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.7.9\build\Microsoft.VisualStudio.Azure.Fabric.Application.targets')" />
+  <Target Name="ValidateMSBuildFiles" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.7.9\build\Microsoft.VisualStudio.Azure.Fabric.Application.props')" Text="Unable to find the '..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.7.9\build\Microsoft.VisualStudio.Azure.Fabric.Application.props' file. Please restore the 'Microsoft.VisualStudio.Azure.Fabric.MSBuild' Nuget package." />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.7.9\build\Microsoft.VisualStudio.Azure.Fabric.Application.targets')" Text="Unable to find the '..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.7.9\build\Microsoft.VisualStudio.Azure.Fabric.Application.targets' file. Please restore the 'Microsoft.VisualStudio.Azure.Fabric.MSBuild' Nuget package." />
+  </Target>
+</Project>
